@@ -2,6 +2,8 @@
 
 ## This is a sample application that uses a replicate.com model called vaibhavs10/incredibly-fast-whisper to generate speech to text
 
+## It then uses mistralai/mixtral-8x7b-instruct-v0.1 (small llm, fast) to correct the text grammar and such
+
 1. run `python3 -m venv .venv`
 2. `source .venv/bin/activate`
 3. `pip install -r requirements.txt`

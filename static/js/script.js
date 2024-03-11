@@ -1,10 +1,25 @@
 const recordButton = document.getElementById('recordButton');
 const transcriptDiv = document.getElementById('transcript');
+const improveButton = document.getElementById('improveButton');
 
 let isRecording = false;
 let mediaRecorder;
 let intervalId;
 let full_transcript = '';
+
+improveButton.addEventListener('click', async () => {
+  const response = await fetch('/improve', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ transcript: full_transcript }),
+  });
+
+  const data = await response.json();
+  console.log(data);
+  document.getElementById('improvedTranscript').textContent = data.result;
+});
 
 recordButton.addEventListener('click', () => {
   if (!isRecording) {

@@ -2,3 +2,5 @@ replicate==0.24.0
 python-dotenv==1.0.1
 boto3==1.34.59
 flask==3.0.2
+librosa==0.10.1
+pysoundfile==0.9.0.post1
